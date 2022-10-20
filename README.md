@@ -4,13 +4,18 @@
 It's a project I put in place to practice JavaScript, HTML, CSS.  
 I first tried it using div's, than I stumbled accross the HTML canvas element, and a good explanation from 'CodeExplainedRepo' (in references)
 
+## Try it
+You can try this repo [here](https://htmlpreview.github.io/?https://github.com/BOAScripts/SnakeGame-JS-Canvas/blob/main/index.html)
+
 > ## ToDo's  
 > - [ ] game over screen
-> - [ ] end/reset function
+> - [ ] replayability (without refreshing the page)
 > - [ ] keep high score of session
+> - [ ] add some sound effect
 > - [ ] do not spawn goal on snake
-> - [ ] make it looks good :smile:
+> - [ ] spawn "enemy" blocks 
+> - [ ] make it prettier :smile:
 
 > ### References
-> 'github.com/CodeExplainedRepo/Snake-JavaScript'  
-> ⤷ which looks like a simpler version of 'googlesnake.com'
+> https://github.com/CodeExplainedRepo/Snake-JavaScript  
+> ⤷ which looks like a simpler version of 'https://googlesnake.com'
