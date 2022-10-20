@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="./src/styles.css">
+
+   <title>Snake Game Canvas</title>
+</head>
+<body>
+   <h1>Welcome to my snake game</h1>
+   <section id='gameSize'>
+      <input type="number" placeholder="width" name="width" id="width"> 
+      <span>x</span>
+      <input type="number" placeholder="height" name="height" id="height">
+   </section>
+   <section id="gameRules">
+      <p>any value below 10 will display a grid of 30x20</p>
+   </section>
+   <p id="score">0</p>
+   <section class="btnSection">
+   <button id="play">PLAY</button>
+   <button id="reset">RESET</button>
+   </section>
+   <section id ="warpper">
+      <canvas id="grid"></canvas>
+   </section>
+
+   
+   
+   <script src="./src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    /* background-color: rgb(0, 3, 31);
+    color: rgb(223, 230, 185); */
+
+    font-family: "Lucida Console", "Courier New", monospace;
+    text-align: center;
+}
+
+section {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#warpper {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
