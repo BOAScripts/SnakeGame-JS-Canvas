@@ -29,7 +29,7 @@ let goal = {}; // obj {}{x:...,y:...}
 let score = 0;
 let d = "RIGHT"; // init direction is right
 
-let game; // global acces of the game
+let game; // global access of the game
 let canPress = true; // key press timing mitigation
 
 // START ON PLAY
