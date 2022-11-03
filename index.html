@@ -12,25 +12,24 @@
 </head>
 <body>
    <h1>Welcome to my snake game</h1>
-   <section id='gameSize'>
-      <input type="number" placeholder="width" name="width" id="width"> 
-      <span>x</span>
-      <input type="number" placeholder="height" name="height" id="height">
-   </section>
-   <section id="gameRules">
-      <p>any value below 10 will display a grid of 30x20</p>
-   </section>
-   <p id="scoreTxt">Score: <span id="score">0</span></p>
-   <section class="btnSection">
-      <button id="play">PLAY</button>
-      <button id="reset">RESET</button>
-   </section>
-   <section id ="wrapper">
-      <canvas id="grid"></canvas>
-   </section>
-
-   
-   
+   <main id ="wrapper">
+      <p id="scoreTxt">Score: <span id="score">0</span></p>
+      <div id="startScreen">
+         <div id='gameSize'>
+            <input type="number" placeholder="width" name="width" id="width"> 
+            <span>x</span>
+            <input type="number" placeholder="height" name="height" id="height">
+         </div>
+         <div id="gameRules">
+            <p>any value below 10 will display a grid of 30x20</p>
+         </div>
+         <button id="play">PLAY</button>
+      </div>
+      <canvas class="hidden" id="grid"></canvas>
+      <div id="endScreen">
+         <button id="reset">RESET</button>
+      </div>
+   </main>
    <script src="./src/script.js"></script>
 </body>
 </html>

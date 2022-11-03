@@ -27,6 +27,13 @@ body {
     background-color: var(--subtle-color);
     color: var(--text-color);
 }
+h1 {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding:0.5em 0.5em;
+    text-decoration: underline;
+    
+}
 
 #scoreTxt{
     margin: auto;
@@ -35,14 +42,14 @@ body {
     padding: 0.5em;
     font-size: 150%;
     border: solid var(--outline-color);
+    background-color: var(--dark-color);
     border-radius: 0.5em;
     box-sizing: content-box;
     width: 20%;
 
 }
-
-.btnSection{
-    padding: 0.5em;
+#score {
+    color: var(--text-color);
 }
 
 button {
@@ -84,4 +91,19 @@ input:focus {
     display: block;
     margin: 0;
     padding: 0;
+}
+
+#startScreen {
+    width: 50%;
+    margin: auto;
+    border: solid;
+    border-radius: 0.5em;
+    border-color: var(--border-color);
+}
+
+#grid {
+    cursor: none;
+}
+.hidden {
+    display: none;
 }

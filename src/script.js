@@ -4,11 +4,13 @@ let width = document.querySelector('#width'); // input
 
 const grid = document.querySelector('#grid'); // canvas 
 const ctx = grid.getContext("2d"); // canvas context
+let defaultWidth = 20;
+let defaultHeight = 15;
 
 let scoreDisplay = document.querySelector('#score'); // text
-const btnSection = document.querySelector('.btnSection'); // Section
 const playBtn = document.querySelector('#play'); // button
 const resetBtn = document.querySelector('#reset'); // button
+const startScreen = document.querySelector('#startScreen'); // button
 
 const cell = 32; // cell size in px
 const bgCell = new Image();
@@ -32,9 +34,11 @@ let d = "RIGHT"; // init direction is right
 let game; // global access of the game
 let canPress = true; // key press timing mitigation
 
+
 // START ON PLAY
 playBtn.addEventListener('click', () => {
-    //btnSection.style.display = 'none';
+    grid.classList.remove('hidden')
+    startScreen.classList.add('hidden')
     // Set init. grid and boundaries
     generateGrid(width.value,height.value);
     getGridArray(maxX,maxY);
@@ -121,8 +125,8 @@ function displayFrame(){
 // Draw grid
 function generateGrid (width,height) {
     if (width<10 && height<10){
-        width = 11;
-        height = 11;
+        width = defaultWidth;
+        height = defaultHeight;
     }
     // define boundaries of canvas
     grid.width = width * cell;
