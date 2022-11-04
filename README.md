@@ -15,7 +15,8 @@ You can try this repo [here](https://htmlpreview.github.io/?https://github.com/B
 - [ ] replayability (without refreshing the page)
 - [ ] keep high score of session
 - [ ] add some sound effect
-- [x] do not spawn goal on snake
+- [x] do not spawn goal on snake  
+-> can still spawn on same location ...
 - [ ] spawn "enemy" blocks 
 - [ ] make it prettier :smile:
 

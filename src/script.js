@@ -1,16 +1,17 @@
 // GLOBAL VARS
-let height = document.querySelector('#height'); // input
-let width = document.querySelector('#width'); // input
+
+let scoreDisplay = document.querySelector('#score'); // text
+
+const startScreen = document.querySelector('#startScreen'); // List of content
+const switchGameSize = document.getElementsByName('switchGameSize') // "radio" buttons
+const playBtn = document.querySelector('#play'); // button
 
 const grid = document.querySelector('#grid'); // canvas 
 const ctx = grid.getContext("2d"); // canvas context
-let defaultWidth = 20;
-let defaultHeight = 15;
 
-let scoreDisplay = document.querySelector('#score'); // text
-const playBtn = document.querySelector('#play'); // button
+const endScreen = document.querySelector('#endScreen') // list of content
 const resetBtn = document.querySelector('#reset'); // button
-const startScreen = document.querySelector('#startScreen'); // button
+
 
 const cell = 32; // cell size in px
 const bgCell = new Image();
@@ -39,8 +40,9 @@ let canPress = true; // key press timing mitigation
 playBtn.addEventListener('click', () => {
     grid.classList.remove('hidden')
     startScreen.classList.add('hidden')
+    const gameSize = getGameSize()
     // Set init. grid and boundaries
-    generateGrid(width.value,height.value);
+    generateGrid(gameSize.x,gameSize.y);
     getGridArray(maxX,maxY);
     // set init. cells of the snake (middle of grid)
     generateStartSnake(maxX,maxY);
@@ -122,12 +124,31 @@ function displayFrame(){
     
 }
 
+// Retrieve selected gameSize
+function getGameSize(){
+    let gameSize = {}
+    for (const options of switchGameSize){
+        if (options.checked === true){
+            switch (options.value) {
+                case 'smallGrid':
+                    gameSize = {x : 15, y : 10}
+                    break;
+                case 'mediumGrid':
+                    gameSize = {x : 20, y : 15}
+                    break;
+                case 'bigGrid':
+                    gameSize = {x : 30, y : 20}
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+    return gameSize;
+}
+
 // Draw grid
 function generateGrid (width,height) {
-    if (width<10 && height<10){
-        width = defaultWidth;
-        height = defaultHeight;
-    }
     // define boundaries of canvas
     grid.width = width * cell;
     grid.height = height * cell;
@@ -140,7 +161,6 @@ function generateGrid (width,height) {
     // set value of global vars
     maxX = width;
     maxY = height;
-    //return `${width}-${height}`;
 }
 
 function getGridArray (gridMaxX,gridMaxY){
@@ -152,23 +172,21 @@ function getGridArray (gridMaxX,gridMaxY){
 }
 
 // return a random position where snake isn't
+// can return the pos of the goal ==> FixIt!
 function getAvailablePos(){
     const gridNotSnake = [].concat(gridArray);
     for (let n in snake){
         for (let m in gridNotSnake){
-            // condition seems not OK :-(
             if (snake[n].x == gridNotSnake[m].x && snake[n].y == gridNotSnake[m].y){
                 gridNotSnake.splice(m,1);
             }
         }
     }
-    
-    if (gridArray.length !== (gridNotSnake.length + snake.length)){
-        console.log(gridNotSnake, snake, `grid =${gridArray.length}; grid-snake =${gridNotSnake.length + snake.length}`);
-        gameOver();
-        console.error ('DIF ERROR')
-    }
-
+    // if (gridArray.length !== (gridNotSnake.length + snake.length)){
+    //     console.log(gridNotSnake, snake, `grid =${gridArray.length}; grid-snake =${gridNotSnake.length + snake.length}`);
+    //     gameOver();
+    //     console.error ('DIF ERROR')
+    // }
     let availablePos = gridNotSnake[Math.floor(Math.random() * gridNotSnake.length)];
     return availablePos;
 }
@@ -216,5 +234,8 @@ function isOuroboros(head,snake){
 
 function gameOver(){
     //console.log('D.E.D')
+    endScreen.classList.remove('hidden');
+    //endScreen.style.transform = `translate(${transValue})`
+    grid.style.filter = "grayscale(75%)"
     clearInterval(game);
 }

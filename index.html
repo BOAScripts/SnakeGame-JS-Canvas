@@ -15,19 +15,27 @@
    <main id ="wrapper">
       <p id="scoreTxt">Score: <span id="score">0</span></p>
       <div id="startScreen">
+         <img src="./src/img/snake_preview.png" id="gamePreview">
          <div id='gameSize'>
-            <input type="number" placeholder="width" name="width" id="width"> 
-            <span>x</span>
-            <input type="number" placeholder="height" name="height" id="height">
+            <input type="radio" name="switchGameSize" id="smallGrid" value="smallGrid">
+            <label for="smallGrid">15x10</label>
+            <input type="radio" name="switchGameSize" id="mediumGrid" value="mediumGrid" checked>
+            <label for="mediumGrid">20x15</label>
+            <input type="radio" name="switchGameSize" id="bigGrid" value="bigGrid">
+            <label for="bigGrid">30x20</label>
          </div>
          <div id="gameRules">
-            <p>any value below 10 will display a grid of 30x20</p>
+            <p class="header"><u>Game rules</u></p>
+            <p class="list">Get (+1) to increase score</p>
+            <p class="list">Borders are deadly</p>
+            <p class="list">Snake body is deadly</p>
          </div>
          <button id="play">PLAY</button>
       </div>
       <canvas class="hidden" id="grid"></canvas>
-      <div id="endScreen">
-         <button id="reset">RESET</button>
+      <div class="hidden" id="endScreen">
+         <p>DEAD: Replay ?</p>
+         <button id="reset">Try again!</button>
       </div>
    </main>
    <script src="./src/script.js"></script>
