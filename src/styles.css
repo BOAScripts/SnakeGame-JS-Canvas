@@ -59,7 +59,7 @@ button:focus {
     display: none;
 }
 
-#scoreTxt{
+#scoreTxt {
     margin: auto;
     margin-bottom: 0.5em;
     margin-top: 0.5em;
@@ -73,7 +73,7 @@ button:focus {
     box-shadow: 0 0 0.8em inset var(--shadow-color);
 
 }
-#score {
+#scoreTxt span {
     font-weight: 550;
 }
 

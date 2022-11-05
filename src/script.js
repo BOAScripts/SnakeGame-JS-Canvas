@@ -1,6 +1,7 @@
 // GLOBAL VARS
 
 let scoreDisplay = document.querySelector('#score'); // text
+let highestDisplay = document.querySelector('#highest'); // text
 
 const startScreen = document.querySelector('#startScreen'); // List of content
 const switchGameSize = document.getElementsByName('switchGameSize') // "radio" buttons
@@ -30,6 +31,7 @@ let gridArray = []; // Array of all pos in grid {x:..,y:..}
 let snake = []; // array of objs{x:..,y:..}
 let goal = {}; // obj {}{x:..,y:..}
 let score = 0;
+let highest = 0;
 let d = "RIGHT"; // init direction is right
 
 let game; // global access of the game
@@ -232,6 +234,10 @@ function isOuroboros(head,snake){
 }
 
 function gameOver(){
+    if (score > highest){
+        highest = score;
+        highestDisplay.innerHTML = highest;
+    }
     grid.style.cursor = "auto";
     endScreen.classList.remove('hidden');
     grid.style.filter = "grayscale(75%)"
@@ -249,6 +255,7 @@ function resetGame(){
     snake = [];
     goal = {};
     score = 0;
+    scoreDisplay.innerHTML = score;
     d = 'RIGHT';
     canPress = true;
     // reset display
