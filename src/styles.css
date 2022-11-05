@@ -59,8 +59,13 @@ button:focus {
     display: none;
 }
 
-#scoreTxt {
-    margin: auto;
+#scores {
+    display: flex;
+    justify-content: space-around;
+
+}
+.scoreTxt {
+    margin-top: 0;
     margin-bottom: 0.5em;    
     padding: 0.5em;
     font-size: 1.5em;
@@ -73,21 +78,28 @@ button:focus {
     box-shadow: 0 0 0.8em inset var(--shadow-color);
 
 }
-#scoreTxt span {
+.scoreTxt span{
     font-weight: 550;
+}
+.scoreTxt:first-of-type{
+    margin-left: 15em;
+}
+.scoreTxt:last-of-type{
+    margin-right: 15em;
 }
 
 #wrapper {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
-
+    margin-top: 6rem;
 }
 
 #startScreen {
     background-color: var(--bg-lighter-color);
     width: 50%;
-    margin: auto;
     border: solid var(--border-color);
     border-radius: 1em;
 }
