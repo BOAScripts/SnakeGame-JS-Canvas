@@ -61,13 +61,13 @@ button:focus {
 
 #scoreTxt {
     margin: auto;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
+    margin-bottom: 0.5em;    
     padding: 0.5em;
     font-size: 1.5em;
     border: solid var(--outline-color);
+    border-top: 0;
     background-color: var(--dark-color);
-    border-radius: 0.5em;
+    border-radius: 0 0 0.5em 0.5em;
     box-sizing: content-box;
     width: 20%;
     box-shadow: 0 0 0.8em inset var(--shadow-color);
