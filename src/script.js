@@ -25,7 +25,7 @@ goalImg.src = "src/img/goal.png" // Goal image
 
 let maxX; // Grid boundaries
 let maxY;
-const gridArray = []; // Array of all pos in grid {x:..,y:..}
+let gridArray = []; // Array of all pos in grid {x:..,y:..}
 
 let snake = []; // array of objs{x:..,y:..}
 let goal = {}; // obj {}{x:..,y:..}
@@ -37,7 +37,11 @@ let canPress = true; // key press timing mitigation
 
 
 // START ON PLAY
-playBtn.addEventListener('click', () => {
+playBtn.addEventListener('click', playGame)
+
+// FUNCS
+function playGame(){
+    grid.style.cursor = "none";
     grid.classList.remove('hidden')
     startScreen.classList.add('hidden')
     const gameSize = getGameSize()
@@ -56,13 +60,8 @@ playBtn.addEventListener('click', () => {
     game = setInterval(displayFrame,150);
     // get direction input
     document.addEventListener('keydown', setDirection);
-    // reset game
-    resetBtn.addEventListener('click', () => {
-        gameOver();
-    })
-})
+}
 
-// FUNCS
 // Draw frame on canvas
 function displayFrame(){
     // redraw grid
@@ -233,9 +232,29 @@ function isOuroboros(head,snake){
 }
 
 function gameOver(){
-    //console.log('D.E.D')
+    grid.style.cursor = "auto";
     endScreen.classList.remove('hidden');
-    //endScreen.style.transform = `translate(${transValue})`
     grid.style.filter = "grayscale(75%)"
     clearInterval(game);
+    resetBtn.focus();
+    // reset game
+    resetBtn.addEventListener('click', resetGame)
+}
+
+function resetGame(){
+    // clear global VARS
+    maxX = 0;
+    maxY = 0;
+    gridArray = [];
+    snake = [];
+    goal = {};
+    score = 0;
+    d = 'RIGHT';
+    canPress = true;
+    // reset display
+    grid.style.filter = "grayscale(0%)";
+    endScreen.classList.add('hidden');
+    // Play again
+    playGame();
+
 }

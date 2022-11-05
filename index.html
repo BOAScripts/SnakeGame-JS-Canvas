@@ -12,8 +12,8 @@
 </head>
 <body>
    <h1>Welcome to my snake game</h1>
+   <p id="scoreTxt">Score: <span id="score">0</span></p>
    <main id ="wrapper">
-      <p id="scoreTxt">Score: <span id="score">0</span></p>
       <div id="startScreen">
          <img src="./src/img/snake_preview.png" id="gamePreview">
          <div id='gameSize'>
@@ -32,11 +32,11 @@
          </div>
          <button id="play">PLAY</button>
       </div>
-      <canvas class="hidden" id="grid"></canvas>
       <div class="hidden" id="endScreen">
          <p>DEAD: Replay ?</p>
          <button id="reset">Try again!</button>
       </div>
+      <canvas class="hidden" id="grid"></canvas>
    </main>
    <script src="./src/script.js"></script>
 </body>

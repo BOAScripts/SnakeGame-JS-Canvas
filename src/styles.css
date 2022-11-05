@@ -3,6 +3,7 @@ Define colors theme
 */
 :root {
     --bg-color: rgba(32,32,32, 1);
+    --bg-lighter-color: rgb(28, 31, 36);
     --text-color: rgba(238,239,242, 1);
     --text-soft-color: rgba(238,239,241, 1);
     --text-strong-color: rgba(187,187,187, 1);
@@ -35,25 +36,6 @@ h1 {
     
 }
 
-#scoreTxt{
-    margin: auto;
-    margin-bottom: 0.5em;
-    margin-top: 0.5em;
-    padding: 0.5em;
-    font-size: 150%;
-    border: solid var(--outline-color);
-    background-color: var(--dark-color);
-    border-radius: 0.5em;
-    box-sizing: content-box;
-    width: 20%;
-    box-shadow: 0 0 0.8em inset var(--shadow-color);
-
-}
-#score {
-    font-weight: 500;
-    color: var(--text-color);
-}
-
 button {
     padding: 0.5em;
     border-radius: 0.5em;
@@ -66,7 +48,6 @@ button {
     background-color: var(--subtle-color);
     color: var(--text-color);
 }
-
 button:hover,
 button:focus {
     outline: none;
@@ -74,21 +55,27 @@ button:focus {
     border-color: var(--outline-color);
 }
 
-/* input {
-    height: 2em;
-    border-radius: 0.5em;
-    text-align: center;    
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    border-style: solid;
-    border-color: var(--border-color);    
+.hidden {
+    display: none;
 }
-input:active,
-input:focus,
-input:hover {
-    outline: none;
-    border-color: var(--outline-color);
-} */
+
+#scoreTxt{
+    margin: auto;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    padding: 0.5em;
+    font-size: 1.5em;
+    border: solid var(--outline-color);
+    background-color: var(--dark-color);
+    border-radius: 0.5em;
+    box-sizing: content-box;
+    width: 20%;
+    box-shadow: 0 0 0.8em inset var(--shadow-color);
+
+}
+#score {
+    font-weight: 550;
+}
 
 #wrapper {
     display: block;
@@ -98,11 +85,13 @@ input:hover {
 }
 
 #startScreen {
+    background-color: var(--bg-lighter-color);
     width: 50%;
     margin: auto;
     border: solid var(--border-color);
     border-radius: 1em;
 }
+
 #gamePreview {
     width: auto;
     max-width: 75%;
@@ -165,24 +154,17 @@ input:hover {
     width: 50%;
     margin-bottom: 1em;
 }
-#grid {
-    cursor: none;
-}
 
 #endScreen {
     margin: auto;
     width: 25%;
     border: solid var(--border-color);
     border-radius: 1em;
+    transform: translate(0, -20em);
+    background-color: var(--bg-lighter-color);
 
 }
-
 #endScreen button{
     margin-bottom: 1em;
     width: 50%;
 }
-
-.hidden {
-    display: none;
-}
-
