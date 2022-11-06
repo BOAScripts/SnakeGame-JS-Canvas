@@ -12,7 +12,7 @@ You can try this repo [here](https://htmlpreview.github.io/?https://github.com/B
 ## ToDo's  
 
 - [ ] show controls on start screen
-- [ ] change preview img corresponding to gameSize selected
+- [X] change preview img corresponding to gameSize selected
 - [x] vertical center endScreen
 - [ ] add some sound effect
 - [ ] spawn "enemy" blocks 

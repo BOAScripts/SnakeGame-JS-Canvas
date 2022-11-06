@@ -4,6 +4,7 @@ let scoreDisplay = document.querySelector('#score'); // text
 let highestDisplay = document.querySelector('#highest'); // text
 
 const startScreen = document.querySelector('#startScreen'); // List of content
+const gamePreview = document.querySelector('#gamePreview'); // img of game preview
 const switchGameSize = document.getElementsByName('switchGameSize') // "radio" buttons
 const playBtn = document.querySelector('#play'); // button
 
@@ -12,8 +13,6 @@ const ctx = grid.getContext("2d"); // canvas context
 
 const endScreen = document.querySelector('#endScreen') // list of content
 const resetBtn = document.querySelector('#reset'); // button
-let endScreenTransform = '';
-
 
 const cell = 32; // cell size in px
 const bgCell = new Image();
@@ -39,6 +38,35 @@ let game; // global access of the game
 let canPress = true; // key press timing mitigation
 
 
+// DEFINE GRID SIZE
+// // Setup defaults
+let gameSize = {x : 20, y : 15};
+let endScreenTransform = 'translate(0,-20em)';
+// // change onclick of radio button
+for (const sizeOpt of switchGameSize){
+    sizeOpt.onclick = () => {
+        switch (sizeOpt.value) {
+            case 'smallGrid':
+                gameSize = {x : 15, y : 10};
+                endScreenTransform = 'translate(0,-13em)';
+                gamePreview.src = './src/img/snake_preview_S.png';
+                break;
+            case 'mediumGrid':
+                gameSize = {x : 20, y : 15};
+                endScreenTransform = 'translate(0,-20em)';
+                gamePreview.src = './src/img/snake_preview_M.png';
+                break;
+            case 'bigGrid':
+                gameSize = {x : 30, y : 20};
+                endScreenTransform = 'translate(0,-25em)';
+                gamePreview.src = './src/img/snake_preview_XL.png';
+                break;
+            default:
+                break;
+        }
+    }
+}
+
 // START ON PLAY
 playBtn.addEventListener('click', playGame)
 
@@ -47,7 +75,6 @@ function playGame(){
     grid.style.cursor = "none";
     grid.classList.remove('hidden')
     startScreen.classList.add('hidden')
-    const gameSize = getGameSize()
     // Set init. grid and boundaries
     generateGrid(gameSize.x,gameSize.y);
     getGridArray(maxX,maxY);
@@ -124,32 +151,6 @@ function displayFrame(){
     // Allow again an input
     canPress = true;
     
-}
-
-// Retrieve selected gameSize
-function getGameSize(){
-    let gameSize = {}
-    for (const options of switchGameSize){
-        if (options.checked === true){
-            switch (options.value) {
-                case 'smallGrid':
-                    gameSize = {x : 15, y : 10};
-                    endScreenTransform = 'translate(0,-13em)';
-                    break;
-                case 'mediumGrid':
-                    gameSize = {x : 20, y : 15}
-                    endScreenTransform = 'translate(0,-20em)';
-                    break;
-                case 'bigGrid':
-                    gameSize = {x : 30, y : 20}
-                    endScreenTransform = 'translate(0,-25em)';
-                    break;
-                default:
-                    break;
-            }
-        }
-    }
-    return gameSize;
 }
 
 // Draw grid
