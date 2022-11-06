@@ -11,14 +11,15 @@ You can try this repo [here](https://htmlpreview.github.io/?https://github.com/B
 
 ## ToDo's  
 
-- [x] game over screen
-- [x] replayability (without refreshing the page)
-- [x] keep high score of session
+- [ ] show controls on start screen
+- [ ] change preview img corresponding to gameSize selected
+- [ ] vertical center endScreen
 - [ ] add some sound effect
-- [x] do not spawn goal on snake  
--> can still spawn on same location ...
 - [ ] spawn "enemy" blocks 
 - [ ] make it prettier :smile:
+
+- [x] do not spawn goal on snake  
+-> can still spawn on same location ...
 
 > ### References
 > https://github.com/CodeExplainedRepo/Snake-JavaScript  
