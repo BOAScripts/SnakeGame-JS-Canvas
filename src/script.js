@@ -12,6 +12,7 @@ const ctx = grid.getContext("2d"); // canvas context
 
 const endScreen = document.querySelector('#endScreen') // list of content
 const resetBtn = document.querySelector('#reset'); // button
+let endScreenTransform = '';
 
 
 const cell = 32; // cell size in px
@@ -132,13 +133,16 @@ function getGameSize(){
         if (options.checked === true){
             switch (options.value) {
                 case 'smallGrid':
-                    gameSize = {x : 15, y : 10}
+                    gameSize = {x : 15, y : 10};
+                    endScreenTransform = 'translate(0,-13em)';
                     break;
                 case 'mediumGrid':
                     gameSize = {x : 20, y : 15}
+                    endScreenTransform = 'translate(0,-20em)';
                     break;
                 case 'bigGrid':
                     gameSize = {x : 30, y : 20}
+                    endScreenTransform = 'translate(0,-25em)';
                     break;
                 default:
                     break;
@@ -239,6 +243,7 @@ function gameOver(){
         highestDisplay.innerHTML = highest;
     }
     grid.style.cursor = "auto";
+    endScreen.style.transform = endScreenTransform;
     endScreen.classList.remove('hidden');
     grid.style.filter = "grayscale(75%)"
     clearInterval(game);

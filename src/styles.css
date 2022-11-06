@@ -172,7 +172,6 @@ button:focus {
     width: 25%;
     border: solid var(--border-color);
     border-radius: 1em;
-    transform: translate(0, -20em);
     background-color: var(--bg-lighter-color);
 
 }
