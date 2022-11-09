@@ -55,6 +55,14 @@ button:focus {
     border-color: var(--outline-color);
 }
 
+a{
+    color: var(--outline-color);
+}
+a:hover {
+    color: var(--special-color);
+    font-style: italic;
+}
+
 .hidden {
     display: none;
 }
@@ -103,22 +111,37 @@ button:focus {
     border: solid var(--border-color);
     border-radius: 1em;
 }
-
+#scContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1em 0 0 0;
+    
+}
 #gamePreview {
     width: auto;
-    max-width: 75%;
+    max-width: 50%;
     border-radius: 1em;
+    margin-left: 1em;
 }
-
+#scRight {
+    margin-right: 1em;
+}
+#controlsImg {
+    width: auto;
+    
+}
 #gameRules {
     margin: 1em 0;
 }
-#gameRules .header {
+.grHeader {
     font-size: 1.2em;
     font-weight: 550;
     margin-bottom: 0.1em;
+    text-decoration: underline;
 }
-#gameRules .list {
+.list {
     padding: 0;
     margin: 0;
     font-style: italic;
@@ -164,7 +187,7 @@ button:focus {
 
 #play {
     width: 50%;
-    margin-bottom: 1em;
+    margin: 1em 0 1em 0;
 }
 
 #endScreen {
@@ -178,4 +201,13 @@ button:focus {
 #endScreen button{
     margin-bottom: 1em;
     width: 50%;
+}
+
+footer {
+    position: fixed;
+    padding: 1em 0 1em 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: var(--bg-color);
 }

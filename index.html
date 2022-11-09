@@ -11,27 +11,36 @@
    <title>Snake Game Canvas</title>
 </head>
 <body>
-   <h1>Welcome to my snake game</h1>
+   <header>
+      <h1>Welcome to my snake game</h1>
+   </header>
    <div id="scores">
       <p class="scoreTxt">Score : <span id="score">0</span></p>
       <p class="scoreTxt">Highest : <span id="highest">0</span></p>
    </div>
    <main id ="wrapper">
       <div id="startScreen">
-         <img src="./src/img/snake_preview_M.png" id="gamePreview">
-         <div id='gameSize'>
-            <input type="radio" name="switchGameSize" id="smallGrid" value="smallGrid">
-            <label for="smallGrid">15x10</label>
-            <input type="radio" name="switchGameSize" id="mediumGrid" value="mediumGrid" checked>
-            <label for="mediumGrid">20x15</label>
-            <input type="radio" name="switchGameSize" id="bigGrid" value="bigGrid">
-            <label for="bigGrid">30x20</label>
-         </div>
-         <div id="gameRules">
-            <p class="header"><u>Game rules</u></p>
-            <p class="list">Get (+1) to increase score</p>
-            <p class="list">Borders are deadly</p>
-            <p class="list">Snake body is deadly</p>
+         <div id="scContent">
+            <img src="./src/img/snake_preview_M.png" id="gamePreview">
+            <div id="scRight">
+               <p class="grHeader">Controls</p>
+               <img src="./src/img/buttons.png" id="controlsImg">
+               <p class="grHeader">Select game size</p>
+               <div id='gameSize'>
+                  <input type="radio" name="switchGameSize" id="smallGrid" value="smallGrid">
+                  <label for="smallGrid">15x10</label>
+                  <input type="radio" name="switchGameSize" id="mediumGrid" value="mediumGrid" checked>
+                  <label for="mediumGrid">20x15</label>
+                  <input type="radio" name="switchGameSize" id="bigGrid" value="bigGrid">
+                  <label for="bigGrid">30x20</label>
+               </div>
+               <div id="gameRules">
+                  <p class="grHeader">Game rules</p>
+                  <p class="list">Get (+1) to increase score</p>
+                  <p class="list">Borders are deadly</p>
+                  <p class="list">Snake body is deadly</p>
+               </div>
+            </div>
          </div>
          <button id="play">PLAY</button>
       </div>
@@ -41,6 +50,9 @@
          <button id="reset">Try again!</button>
       </div>
    </main>
+   <footer>
+      <a href="https://www.flaticon.com/free-icons/keyboard" title="keyboard icons">Control icons created by Freepik - Flaticon</a>
+   </footer>
    <script src="./src/script.js"></script>
 </body>
 </html>

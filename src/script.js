@@ -68,13 +68,13 @@ for (const sizeOpt of switchGameSize){
 }
 
 // START ON PLAY
-playBtn.addEventListener('click', playGame)
+playBtn.addEventListener('click', playGame);
 
 // FUNCS
 function playGame(){
     grid.style.cursor = "none";
-    grid.classList.remove('hidden')
-    startScreen.classList.add('hidden')
+    grid.classList.remove('hidden');
+    startScreen.classList.add('hidden');
     // Set init. grid and boundaries
     generateGrid(gameSize.x,gameSize.y);
     getGridArray(maxX,maxY);
@@ -130,7 +130,6 @@ function displayFrame(){
             x : newGoalPos.x,
             y : newGoalPos.y
         }
-        //console.log(`goalX:${goal.x/cell}`,`goalY:${goal.y/cell}`)
     }
     else {
         snake.pop();
