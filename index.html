@@ -21,11 +21,9 @@
    <main id ="wrapper">
       <div id="startScreen">
          <div id="scContent">
-            <img src="./src/img/snake_preview_M.png" id="gamePreview">
-            <div id="scRight">
-               <p class="grHeader">Controls</p>
-               <img src="./src/img/buttons.png" id="controlsImg">
+            <div id="scLeft">
                <p class="grHeader">Select game size</p>
+               <img src="./src/img/snake_preview_M.png" id="gamePreview">
                <div id='gameSize'>
                   <input type="radio" name="switchGameSize" id="smallGrid" value="smallGrid">
                   <label for="smallGrid">15x10</label>
@@ -34,6 +32,11 @@
                   <input type="radio" name="switchGameSize" id="bigGrid" value="bigGrid">
                   <label for="bigGrid">30x20</label>
                </div>
+            </div>
+            <div id="scRight">
+               <p class="grHeader">Controls</p>
+               <img src="./src/img/buttons.png" id="controlsImg">
+               <p class="list">WASD and Arrow keys</p>
                <div id="gameRules">
                   <p class="grHeader">Game rules</p>
                   <p class="list">Get (+1) to increase score</p>
@@ -44,6 +47,7 @@
          </div>
          <button id="play">PLAY</button>
       </div>
+      
       <canvas class="hidden" id="grid"></canvas>
       <div class="hidden" id="endScreen">
          <p>DEAD: Replay ?</p>
