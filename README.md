@@ -11,14 +11,14 @@ You can try this repo [here](https://htmlpreview.github.io/?https://github.com/B
 
 ## ToDo's  
 
-[x] show controls on start screen  
-[X] change preview img corresponding to gameSize selected  
-[x] vertical center endScreen  
-[ ] add some sound effect  
-[ ] spawn "enemy" blocks   
-[ ] make it prettier :smile:
+- [x] show controls on start screen  
+- [x] change preview img corresponding to gameSize selected  
+- [x] vertical center endScreen  
+- [ ] add some sound effect  
+- [ ] spawn "enemy" blocks   
+- [ ] make it prettier :smile:
 
-[x] do not spawn goal on snake  
+- [x] do not spawn goal on snake  
 -> can still spawn on same location ...
 
 ---
