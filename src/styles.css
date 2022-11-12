@@ -3,7 +3,7 @@ Define colors theme
 */
 :root {
     --bg-color: rgba(32,32,32, 1);
-    --bg-lighter-color: rgb(28, 31, 36);
+    --bg-lighter-color: rgb(28, 31, 36, 0.60);
     --text-color: rgba(238,239,242, 1);
     --text-soft-color: rgba(238,239,241, 1);
     --text-strong-color: rgba(187,187,187, 1);
@@ -25,15 +25,15 @@ Define colors theme
 body {
     font-family: "Baloo 2", "Lucida Console", "Courier New", monospace;
     text-align: center;
-    background-color: var(--subtle-color);
+    background: url(./img/bg-motif.png);
     color: var(--text-color);
 }
+header{
+    background: linear-gradient(to left , var(--subtle-color), var(--bg-color)20%, var(--bg-color)80%, var(--subtle-color)100%);
+    padding:0.1em 0 0.1em 0;
+}
 h1 {
-    background-color: var(--bg-color);
-    margin: 0;
-    padding:0.5em 0.5em;
     text-decoration: underline;
-    
 }
 
 button {
@@ -57,10 +57,11 @@ button:focus {
 
 a{
     color: var(--outline-color);
+    text-decoration: none;
 }
 a:hover {
     color: var(--special-color);
-    font-style: italic;
+    text-decoration: underline;
 }
 
 .hidden {
@@ -109,13 +110,24 @@ a:hover {
     font-style: italic;
 }
 
+#ghBanner {
+    display: block;
+    position: absolute;
+    padding: 10px 50px 10px 10px;
+    color: var(--text-color);
+    font-weight: 600;
+    border-radius: 0 0 5px 5px;
+    top: 0;
+    right: 10em;
+    background: url(./img/blacktocat-30_30.png) #0090ff no-repeat 95% 50%;
+}
 #wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 0;
-    margin-top: 6rem;
+    margin-top: 3rem;
 }
 
 #startScreen {
@@ -128,15 +140,17 @@ a:hover {
     display: flex;
     flex-direction: row;    
     justify-content:center;
+    align-items: center;
     margin: 1em 1em 0 1em;
     
 }
 #scLeft {
-    flex-basis: 50%;
+    flex-basis: 70%;
 }
 #scRight {
-    flex-basis: 50%;
+    flex-basis: 30%;
 }
+
 #gamePreview {
     width: auto;
     max-width: 100%;    
@@ -147,7 +161,7 @@ a:hover {
     width: auto;    
 }
 #gameRules {
-    margin: 4em 0;
+    margin: 2em 0;
 }
 
 #gameSize{
@@ -190,6 +204,8 @@ a:hover {
 
 #play {
     width: 50%;
+    font-size: 1.5em;
+    font-weight: 550;
     margin: 1em 0 1em 0;
 }
 
